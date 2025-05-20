@@ -3,6 +3,11 @@
 This project contains Kubernetes configuration files for deploying a web application and a MongoDB database.
 
 ## Files Overview
+- **`mongo-config.yaml`**:  
+    Contains the ConfigMap for MongoDB configuration.
+
+- **`mongo-secret.yaml`**:  
+    Contains the Secret for MongoDB credentials.
 
 - **`webapp.yaml`**:  
     Used for deploying the web application and its associated services.
@@ -12,17 +17,27 @@ This project contains Kubernetes configuration files for deploying a web applica
 
 ## How to Use
 
-1. Apply the MongoDB configuration:
+1. Apply the MongoDB Secret configuration:
+     ```bash
+     kubectl apply -f mongo-secret.yaml
+     ```
+
+2. Apply the MongoDB ConfigMap configuration:
+     ```bash
+     kubectl apply -f mongo-config.yaml
+     ```
+
+3. Apply the MongoDB configuration:
      ```bash
      kubectl apply -f mongo.yaml
      ```
 
-2. Apply the Web Application configuration:
+4. Apply the Web Application configuration:
      ```bash
      kubectl apply -f webapp.yaml
      ```
 
-3. Verify the deployments and services:
+5. Verify the deployments and services:
      ```bash
      kubectl get deployments
      kubectl get services

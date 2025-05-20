@@ -40,7 +40,7 @@ metadata:
   labels:
     app: webapp
 spec:
-  type: nodePort
+  type: NodePort
   selector:
     app: webapp
   ports:
